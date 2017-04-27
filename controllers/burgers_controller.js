@@ -30,7 +30,7 @@ router.post("/", function(req, res){
 
 router.put("/:id", function(req,res){
 	console.log(res.body);
-	burger.updateOne("devoured", res.body.devoured, "id", req.params.id, function(data){
+	burger.updateOne("devoured", req.body.eaten, "id", req.params.id, function(data){
 		res.redirect("/");
 	});
 });
