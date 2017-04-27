@@ -1,6 +1,6 @@
 // Dependencies
 //-----------------------------------------------------------------------------
-const mysql = require("mysql");
+var mysql = require("mysql");
 //=============================================================================
 
 
@@ -8,7 +8,7 @@ const mysql = require("mysql");
 // Set up connection
 //-----------------------------------------------------------------------------
 var connection = mysql.createConnection({
-  port: 2112,
+  port: 3306,
   host: "localhost",
   user: "root",
   password: "SomebodysOutThere42",

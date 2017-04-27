@@ -1,6 +1,6 @@
 // Dependencies
 //------------------------------------------------------------------------------
-const orm = require("../config/orm.js");
+var orm = require("../config/orm.js");
 //==============================================================================
 
 
@@ -9,7 +9,7 @@ const orm = require("../config/orm.js");
 //------------------------------------------------------------------------------
 var burger = {
 
-	selectAll: function(callback){
+	getAll: function(callback){
 		orm.selectAll("burgers", function(response){
 			callback(response);
 		});
@@ -24,7 +24,7 @@ var burger = {
 	updateOne: function(colToUpdate, valueToUpdate, condition, conditionValue, callback){
 		orm.updateOne("burgers", colToUpdate, valueToUpdate, condition, conditionValue, function(response){
 			callback(response);
-		}
+		});
 	}
 }
 //==================================================================================

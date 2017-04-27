@@ -1,6 +1,6 @@
 // Dependencies
 //--------------------------------------------------------------------
-const connection = require("./connection.js");
+var connection = require("../config/connection.js");
 //====================================================================
 
 
@@ -27,8 +27,8 @@ var orm = {
 
 
 selectAll: function(table,callback){
-	var queryString = "SELECT * FROM ?";
-	connection.query(queryString, [table], function(err, queryResult){
+	var queryString = "SELECT * FROM " + table + ";";
+	connection.query(queryString, function(err, queryResult){
 		if (err){
 			throw err
 		};
@@ -52,7 +52,7 @@ insertOne: function(table,columnsArray, valuesArray, callback){
 
 updateOne: function(table,colToUpdate, valueToUpdate, condition, conditionValue, callback){
 	var queryString = "UPDATE " + table +
-	"SET " + colToUpdate + " = " + valueToUpdate ", " +
+	"SET " + colToUpdate + " = " + valueToUpdate + ", " +
 	"WHERE " + condition + " = " + conditionValue;
 
 	connection.query(queryString, function(err, queryResult){
