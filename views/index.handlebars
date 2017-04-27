@@ -10,8 +10,8 @@
         {{this.burger_name}}
 
         <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="sleepy" value="true">
-          <button type="submit">SLEEP TIME!</button>
+          <input type="hidden" name="devoured" value="false">
+          <button type="submit">EATEN!</button>
         </form>
 
         {{!-- {{> cats/delete-cat}} --}}
@@ -29,8 +29,8 @@
         {{this.burger_name}}
 
         <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="sleepy" value="false">
-          <button type="submit">WAKE UP!</button>
+          <input type="hidden" name="sleepy" value="true">
+          <button type="submit">I'M GONNA EAT IT AGAIN!</button>
         </form>
 
         {{!-- {{> cats/delete-cat}} --}}
@@ -44,8 +44,8 @@
 <form action="/" method="POST">
 
   <div>
-    <label for="burgerInput">Enter the name of a burger:</label>
-    <input type="text" id="burgerInput" name="burgerInput">
+    <label for="burger_name">Enter the name of a burger:</label>
+    <input type="text" id="burger_name" name="burger_name">
   </div>
 
   <button type="submit">Add Burger</button>

@@ -20,18 +20,18 @@ router.get("/", function(req, res){
 		
 		res.render("index", hbsObject);
 	});
-	// res.render("index", {burgers: {burger_name: "Test",devoured: false, id:"100"}})
 });
 
 router.post("/", function(req, res){
-	burger.insertOne(req.body.columsArray, req.body.valuesArray ,function(data){
-
+	burger.insertOne(["burger_name","devoured"], [req.body.burger_name, false] ,function(data){
+		res.redirect("/");
 	});
 });
 
-router.put("/", function(req,res){
-	burger.updateOne(function(data){
-
+router.put("/:id", function(req,res){
+	console.log(res.body);
+	burger.updateOne("devoured", res.body.devoured, "id", req.params.id, function(data){
+		res.redirect("/");
 	});
 });
 //=========================================================================

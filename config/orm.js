@@ -40,7 +40,9 @@ selectAll: function(table,callback){
 insertOne: function(table,columnsArray, valuesArray, callback){
 	var queryString = "INSERT INTO "+table +
 	" ("+ columnsArray.toString() + ")" +
-	"VALUES (" + printQuestionMarks(valuesArray) + ") ";
+	" VALUES (" + printQuestionMarks(valuesArray.length) + ") ";
+
+	console.log(queryString);
 
 	connection.query(queryString, valuesArray, function(err, queryResult){
 		if (err){
@@ -52,8 +54,10 @@ insertOne: function(table,columnsArray, valuesArray, callback){
 
 updateOne: function(table,colToUpdate, valueToUpdate, condition, conditionValue, callback){
 	var queryString = "UPDATE " + table +
-	"SET " + colToUpdate + " = " + valueToUpdate + ", " +
-	"WHERE " + condition + " = " + conditionValue;
+	" SET " + colToUpdate + " = " + valueToUpdate + 
+	" WHERE " + condition + " = " + conditionValue;
+
+	console.log(queryString);
 
 	connection.query(queryString, function(err, queryResult){
 		if (err) {
