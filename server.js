@@ -1,13 +1,13 @@
 // Dependencies
 //--------------------------------------------------------------------
-const express = require("express");
-const methodOverride = require("method-override");
-const bodyParser = require("body-parser");
+var express = require("express");
+var methodOverride = require("method-override");
+var bodyParser = require("body-parser");
 //====================================================================
 
-const app = express();
+var app = express();
 
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 
 // Serve static content for the app from the "public" directory in the application directory.
