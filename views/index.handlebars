@@ -1,8 +1,20 @@
 
 
-<h1>Eat-Da-Burger!</h1>
-<h4>Keeping Track of All the Burgers You've Eaten, An' Wan't To Eat.</h4>
-<img src="assets/img/boiger.png">
+<h1 class="centerText">Eat-Da-Burger!</h1>
+<h4 class="centerText">Keeping Track of All the Burgers You've Eaten, An' Wan't To Eat.</h4>
+<img id="burgerPic" src="assets/img/boiger.png">
+
+<form class="centerText" action="/" method="POST">
+
+  <div>
+    <label for="burger_name">Add A Burger To The List:</label>
+    <input type="text" id="burger_name" name="burger_name">
+  </div>
+
+  <button type="submit">Add Burger</button>
+</form>
+
+<h2>Burgers To Be EATEN!</h2>
 
 <ul>
   {{#each burgers}}
@@ -40,14 +52,5 @@
 
 
 
-<form action="/" method="POST">
-
-  <div>
-    <label for="burger_name">Enter the name of a burger:</label>
-    <input type="text" id="burger_name" name="burger_name">
-  </div>
-
-  <button type="submit">Add Burger</button>
-</form>
 
 
